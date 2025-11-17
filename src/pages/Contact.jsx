@@ -101,9 +101,23 @@ function Contact() {
       // Sanitize all form data before submission
       const sanitizedData = sanitizeFormData(formData)
       
-      // TODO: Replace with actual API call when backend is ready
-      // For now, simulate API call
-      await new Promise(resolve => setTimeout(resolve, 500))
+      // Send email using Formspree
+      // Replace 'YOUR_FORM_ID' with your Formspree form ID
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: sanitizedData.name,
+          email: sanitizedData.email,
+          message: sanitizedData.message,
+        }),
+      })
+      
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
       
       // Success - show message
       alert('Thank you for your message! We will get back to you soon.')
