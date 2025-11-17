@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #000000;
+  --primary-dark: #1a1a1a;
+  --secondary-color: #666666;
+  --text-dark: #0f1f12;
+  /* dark text for light backgrounds */
+  --text-light: #2f4f33;
+  /* muted dark text for subcopy on light backgrounds */
+  --bg-light: #0d1a10;
+  --bg-white: #e6fbd3;
+  --border-color: #7fbf67;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Self-hosted Bertioga Sans (core weights) */
+@font-face {
+  font-family: 'BertiogaSans';
+  src: url('/fonts/Bertioga-Sans/web/BertiogaSans-Regular.woff2') format('woff2'),
+    url('/fonts/Bertioga-Sans/web/BertiogaSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BertiogaSans';
+  src: url('/fonts/Bertioga-Sans/web/BertiogaSans-Italic.woff2') format('woff2'),
+    url('/fonts/Bertioga-Sans/web/BertiogaSans-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BertiogaSans';
+  src: url('/fonts/Bertioga-Sans/web/BertiogaSans-Medium.woff2') format('woff2'),
+    url('/fonts/Bertioga-Sans/web/BertiogaSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BertiogaSans';
+  src: url('/fonts/Bertioga-Sans/web/BertiogaSans-Bold.woff2') format('woff2'),
+    url('/fonts/Bertioga-Sans/web/BertiogaSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'BertiogaSans', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-weight: 400;
+  background: linear-gradient(to top right, #132c17, #4d6528, #bbac61, #a1ae1c);
+}
+
+/* Body copy defaults to Bertioga Sans; keep this class for explicit usage */
+.use-nyght,
+.section-title+p,
+.hero-subtitle,
+small,
+.muted,
+.description {
+  font-family: 'BertiogaSans', 'Inter', sans-serif;
+}
+
+/* Self-hosted Nyght Serif */
+@font-face {
+  font-family: 'NyghtSerif';
+  src: url('/fonts/nyght-serif-main/fonts/WEB/NyghtSerif-Regular.woff2') format('woff2'),
+    url('/fonts/nyght-serif-main/fonts/WEB/NyghtSerif-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NyghtSerif';
+  src: url('/fonts/nyght-serif-main/fonts/WEB/NyghtSerif-RegularItalic.woff2') format('woff2'),
+    url('/fonts/nyght-serif-main/fonts/WEB/NyghtSerif-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NyghtSerif';
+  src: url('/fonts/nyght-serif-main/fonts/WEB/NyghtSerif-Bold.woff2') format('woff2'),
+    url('/fonts/nyght-serif-main/fonts/WEB/NyghtSerif-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Self-hosted Overused Grotesk for headings */
+@font-face {
+  font-family: 'OverusedGrotesk';
+  src: url('/fonts/Overused-Grotesk/fonts/woff2/OverusedGrotesk-Roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OverusedGrotesk';
+  src: url('/fonts/Overused-Grotesk/fonts/woff2/OverusedGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OverusedGrotesk';
+  src: url('/fonts/Overused-Grotesk/fonts/woff2/OverusedGrotesk-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OverusedGrotesk';
+  src: url('/fonts/Overused-Grotesk/fonts/woff2/OverusedGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OverusedGrotesk';
+  src: url('/fonts/Overused-Grotesk/fonts/woff2/OverusedGrotesk-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OverusedGrotesk';
+  src: url('/fonts/Overused-Grotesk/fonts/woff2/OverusedGrotesk-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Self-hosted Liga Sans (Bold) for key headings) */
+@font-face {
+  font-family: 'LigaSans';
+  src: url('/fonts/Liga-Sans/LigaSans-Bold.woff2') format('woff2'),
+       url('/fonts/Liga-Sans/LigaSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Self-hosted Vend Sans (Light) for hero title */
+@font-face {
+  font-family: 'VendSans';
+  src: url('/fonts/Vend_Sans/Vend_Sans/static/VendSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VendSans';
+  src: url('/fonts/Vend_Sans/Vend_Sans/static/VendSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  font-family: 'VendSans', 'Inter', sans-serif;
+  border-radius: 50px;
+  mix-blend-mode: screen;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: white;
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: #e8ffe0;
+  border: 2px solid #e8ffe0;
+}
+
+.btn-outline-light:hover {
+  background-color: #1b5e20;
+  color: white;
+  border-color: #1b5e20;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* Animate on Load Animation */
+.animate-on-load-01 {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0) scale3d(0.95, 0.95, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-load-01.visible,
+.animate-on-load-01.animate-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .btn-large {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .btn {
+    padding: 9px 18px;
+    font-size: 14px;
+  }
+
+  .btn-large {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
