@@ -230,6 +230,14 @@
     margin-top: 4rem;
   }
 
+  .services-image-left {
+    order: 2;
+  }
+
+  .services-text-right {
+    order: 1;
+  }
+
   .services-images {
     grid-template-columns: 1fr;
   }

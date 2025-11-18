@@ -5,7 +5,7 @@ import heroVideo from '../../vids/leadersMeeting2025.mp4'
 
 function Home() {
   const [isVisible, setIsVisible] = useState({})
-  const [counters, setCounters] = useState({ clients: 0, years: 0, satisfaction: 0 })
+  const [counters, setCounters] = useState({ clients: 0, years: 0, satisfaction: 0, revenue: '$0' })
   const statsRef = useRef(null)
   const slides = [
     { src: '/imgs/mozaikOrg.jpg', caption: 'Our Organization' },
@@ -90,8 +90,28 @@ function Home() {
       }
 
       animateCounter('clients', 1500, '+')
-      animateCounter('years', 5, '+')
-      animateCounter('satisfaction', 98, '%')
+      animateCounter('years', 10, '+')
+      animateCounter('satisfaction', 92, '%')
+
+      // Revenue counter with dollar formatting
+      let revenueCurrent = 0
+      const revenueTarget = 10000000
+      const revenueIncrement = revenueTarget / steps
+      const revenueTimer = setInterval(() => {
+        revenueCurrent += revenueIncrement
+        if (revenueCurrent >= revenueTarget) {
+          setCounters((prev) => ({ ...prev, revenue: '$10,000,000+' }))
+          clearInterval(revenueTimer)
+        } else {
+          const formatted = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          }).format(Math.floor(revenueCurrent))
+          setCounters((prev) => ({ ...prev, revenue: formatted }))
+        }
+      }, interval)
     }
   }, [isVisible.stats])
 
@@ -212,6 +232,10 @@ function Home() {
               <div className="stat-item animate-on-load-01" style={{ transitionDelay: '0.3s' }}>
                 <div className="stat-number">{counters.satisfaction}</div>
                 <div className="stat-label">Client Satisfaction</div>
+              </div>
+              <div className="stat-item animate-on-load-01" style={{ transitionDelay: '0.4s' }}>
+                <div className="stat-number stat-number-revenue">{counters.revenue}</div>
+                <div className="stat-label">Revenue Generated</div>
               </div>
             </div>
           </div>

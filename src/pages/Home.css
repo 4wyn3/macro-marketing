@@ -293,14 +293,23 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.25rem;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .stat-item {
-  padding: 1rem;
+  padding: 0.5rem;
   transition: transform 0.3s ease;
+  overflow: hidden;
+  word-wrap: break-word;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .stat-item:hover {
@@ -308,12 +317,28 @@
 }
 
 .stat-number {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
   transition: all 0.3s ease;
   color: white;
   font-family: 'VendSans', 'Inter', sans-serif;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-number-revenue {
+  font-size: 1.5rem;
+  min-height: 2.4rem;
 }
 
 .stat-item:hover .stat-number {
@@ -322,7 +347,7 @@
 }
 
 .stat-label {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.9);
   font-family: 'VendSans', 'Inter', sans-serif;
 }
@@ -438,7 +463,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 3rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -450,10 +475,10 @@
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  max-width: 900px;
+  max-width: 800px;
   width: 85%;
   margin: 0 auto;
 }
@@ -515,31 +540,39 @@
   }
 
   .stats-overlay-container {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
   }
 
   .stats-glass-box {
-    padding: 1.25rem 1rem;
-    width: 85%;
-    max-width: 380px;
+    padding: 0.75rem 0.5rem;
+    width: 95%;
+    max-width: 100%;
   }
 
   .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.5rem;
+    min-width: 0;
   }
 
   .stat-number {
-    font-size: 1.75rem;
-    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+    min-height: 1.5rem;
+  }
+
+  .stat-number-revenue {
+    font-size: 0.75rem;
+    min-height: 1.5rem;
   }
 
   .stat-label {
-    font-size: 0.85rem;
+    font-size: 0.65rem;
+    line-height: 1.2;
   }
 
   .stat-item {
-    padding: 0.4rem;
+    padding: 0.25rem;
   }
 
   .team-showcase {
@@ -565,31 +598,39 @@
   }
 
   .stats-overlay-container {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
   }
 
   .stats-glass-box {
-    padding: 0.75rem 0.5rem;
-    width: 88%;
-    max-width: 320px;
+    padding: 0.6rem 0.4rem;
+    width: 95%;
+    max-width: 100%;
   }
 
   .stats-grid {
-    gap: 0.5rem;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.4rem;
+    min-width: 0;
   }
 
   .stat-number {
-    font-size: 1.4rem;
-    margin-bottom: 0.15rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.1rem;
+    min-height: 1.3rem;
+  }
+
+  .stat-number-revenue {
+    font-size: 0.65rem;
+    min-height: 1.3rem;
   }
 
   .stat-label {
-    font-size: 0.75rem;
-    line-height: 1.3;
+    font-size: 0.6rem;
+    line-height: 1.2;
   }
 
   .stat-item {
-    padding: 0.3rem;
+    padding: 0.2rem;
   }
 }
 
@@ -654,10 +695,6 @@
   }
 
   .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
     grid-template-columns: 1fr;
   }
 
